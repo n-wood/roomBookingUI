@@ -21,34 +21,33 @@
             add the calendar view in here...
         </div>
         <div id="actionsPanel" class="footer">
-            <button>
+            <button onclick="showPage('whoAreYouPage')">
                 Book this room
-            </button>
-            <button>
-                See my bookings
             </button>
         </div>
 
     </div>
 
-    <div id="whoAreYouPage">
+    <div id="whoAreYouPage" style="display: none;">
+
+        <h2>Please scan your ID badge</h2>
+        <input type="text" id="userIdField" onkeypress="captureUserId(event)"/>
 
     </div>
 
-    <div id="whenPage">
+    <div id="whenPage" style="display: none;">
+        <h2>When do you need this room?</h2>
+        todo
+    </div>
+
+    <div id="confirmBookingPage" style="display: none;">
 
     </div>
 
-    <div id="myBookingsPage">
 
-    </div>
-
-    <div id="confirmBookingPage">
-
-    </div>
-
-    <div id="confirmCancellationPage">
-
+    <div id=hiddenFields  style="display: none;">
+        <input type="text" id="hiddenUserId" value=""/>
+        <input type="text" id="hiddenUserName" value =""/>
     </div>
 </body>
 
