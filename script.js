@@ -1,12 +1,18 @@
 
 var users = [    
      "0--Nathan Wood",
-     "1--Dan Gleeballs"
+     "1--Dan Gleeballs",
+     "2--Toby Larone",
+     "3--Mike Rowave",
+     "4--James Rees",
+     "5--Penn Gwynn",
+     "6--Sue Flay",
+     "7--Fred O'Barr"
 ]
 
 
 
-var allPageIds = ["welcomePage","whoAreYouPage","whenPage",,"confirmBookingPage"]
+var allPageIds = ["welcomePage","whoAreYouPage",,"confirmBookingPage"]
 
 function hideAllPages()
 {
@@ -28,18 +34,10 @@ function showPage(pageId)
             document.getElementById(pageId).style.display = "block";
             takeFocusForBadgeScanning();
             break;
-        case "whenPage":
-            document.getElementById(pageId).style.display = "block";
-            break;
-        case "myBookingsPage":
-            document.getElementById(pageId).style.display = "block";
-            break;
         case "confirmBookingPage":
             document.getElementById(pageId).style.display = "block";
             break;
-        case "confirmCancellationPage":
-            document.getElementById(pageId).style.display = "block";
-            break;
+       
 
 
     }
@@ -73,6 +71,25 @@ function captureUserId(e)
        
         document.getElementById("hiddenUserId").value = field.value;
         document.getElementById("hiddenUserName").value = lookupUserName(field.value);  
-        showPage("whenPage");
+        updateConfirmationPage();
+        showPage("confirmBookingPage");
     }
 }
+
+function selectedTime(timeSlot)
+{
+    document.getElementById("hiddenSelectedTime").value = timeSlot;
+    showPage('whoAreYouPage');
+}
+
+function updateConfirmationPage()
+{
+    var detail  = "<p>This room has been booked by <strong>" + 
+     document.getElementById("hiddenUserName").value +
+     "</strong> at <strong>" + 
+     document.getElementById("hiddenSelectedTime").value +
+     "</strong</p>" ;
+     alert (detail);
+    document.getElementById('confirmationBox').innerHTML = detail;
+}
+

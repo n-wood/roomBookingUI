@@ -74,3 +74,43 @@ button {
   .statusBox {
       font-size:32px;
   }
+
+  #calendarView {
+    font-size:32px;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: white;
+  }
+  
+  #calendarView td, #calendarView th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #calendarView tr:nth-child(even){background-color:aliceblue}
+  
+
+  
+  #calendarView th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .tod{
+    width: 10%;
+    color: black;
+  }
+  .occupied {
+    background-color: orange;
+    color: white;
+    text-align: center;
+  }
+
+  .invisibaleTextBox{
+    width: 0%;
+    border: none;
+    background-color: #ddd;
+  }

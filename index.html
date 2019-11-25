@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="titleArea" class="topnav">This is room PTG04 in Plaza One ground floor</div>
+    <div id="titleArea" class="topnav">This is room PTG04</div>
 
 
     <div id="welcomePage">
@@ -18,34 +18,70 @@
             </div>
          </div>
         <div id="roomAvailablity" class="content">
-            add the calendar view in here...
+            <table id="calendarView">
+                <tr onclick="selectedTime('10:30')">
+                  <td class='tod'>10:30</td>
+                  <td></td>
+                </tr>
+                <tr onclick="selectedTime('11:00')">  
+                  <td class='tod'>11:00</td>
+                  <td></td>
+                </tr>
+                <tr onclick="selectedTime('11:30')"> 
+                  <td class='tod'>11:30</td>
+                  <td></td>
+                </tr>
+                <tr onclick="alert('Sorry this room is booked by Nathan Wood at 12:00')"> 
+                  <td class='tod'>12:00</td>
+                  <td class = 'occupied'>Nathan Wood</td>
+                </tr>
+                <tr onclick="selectedTime('12:30')"> 
+                  <td class='tod'>12:30</td>
+                  <td></td>
+                </tr>
+                <tr onclick="alert('Sorry this room is booked by Toby Lerone at 13:00')"> 
+                  <td class='tod'>13:00</td>
+                  <td class = 'occupied'>Toby Lerone</td>
+                </tr>
+                <tr onclick="selectedTime('13:30')">
+                  <td class='tod'>13:30</td>
+                  <td></td>
+                </tr>
+                
+              </table>
         </div>
-        <div id="actionsPanel" class="footer">
-            <button onclick="showPage('whoAreYouPage')">
-                Book this room
-            </button>
-        </div>
+        
 
     </div>
 
-    <div id="whoAreYouPage" style="display: none;">
+    <div id="whoAreYouPage" class ="content" style="display: none;">
 
         <h2>Please scan your ID badge</h2>
-        <input type="text" id="userIdField" onkeypress="captureUserId(event)"/>
+        <p>
+            To book this room at we need to know who you are.    
+        </p>
+
+        <p>
+            Please scan you ID badge on the scanner to identify yourself
+        </p>
+        <input type="text" id="userIdField" onkeypress="captureUserId(event)" class="invisibaleTextBox"/>
 
     </div>
 
-    <div id="whenPage" style="display: none;">
-        <h2>When do you need this room?</h2>
-        todo
-    </div>
-
-    <div id="confirmBookingPage" style="display: none;">
-
+    
+    <div id="confirmBookingPage" class ="content" style="display: none;">
+            <h2>Room booked!</h2>
+            <div id = "confirmationBox" >
+            </div> 
+            <div>
+                <p>Thank you</p>
+                <p><a href="index.html">Return to start</a></p>
+            </div>   
     </div>
 
 
     <div id=hiddenFields  style="display: none;">
+        <input type="text" id="hiddenSelectedTime" value =""/>
         <input type="text" id="hiddenUserId" value=""/>
         <input type="text" id="hiddenUserName" value =""/>
     </div>
