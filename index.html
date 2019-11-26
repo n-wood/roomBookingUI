@@ -1,5 +1,6 @@
 <html>
 <head>
+       
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -9,11 +10,10 @@
 
     <div id="welcomePage">
        
-        <div id="roomStatus" class="infobox green">
+        <div id="roomStatus" class="infobox red">
             <div id="roomAvailableSatus" class="roomAvailbleStatusBox">
-                <p id="status" class="statusBox">
-                    This room is current occupied by:
-                </p> 
+                
+                <p id="status" class="statusBox">This room is current occupied by:</p> 
                 <p id='hostsName' class="statusBox">Nathan Wood</p>
             </div>
          </div>
@@ -55,28 +55,34 @@
     </div>
 
     <div id="whoAreYouPage" class ="content" style="display: none;">
-
-        <h2>Please scan your ID badge</h2>
+        <div class="whoAreYouContent">
+            <h2>Please scan your ID badge</h2>
+        
         <p>
             To book this room at we need to know who you are.    
         </p>
 
         <p>
-            Please scan you ID badge on the scanner to identify yourself
+            Please scan you ID badge
         </p>
+        </div>
         <input type="text" id="userIdField" onkeypress="captureUserId(event)" class="invisibaleTextBox"/>
+        <p><i>type a number between 0 and 7 if you don't have a scanner - TODO to be removed once scanner is integrated</i></p>
 
     </div>
 
     
     <div id="confirmBookingPage" class ="content" style="display: none;">
-            <h2>Room booked!</h2>
+            <div class="confirmationContent">    
+        <h2>Room booked!</h2>
+            
             <div id = "confirmationBox" >
             </div> 
             <div>
                 <p>Thank you</p>
                 <p><a href="index.html">Return to start</a></p>
             </div>   
+        </div>
     </div>
 
 
@@ -85,6 +91,14 @@
         <input type="text" id="hiddenUserId" value=""/>
         <input type="text" id="hiddenUserName" value =""/>
     </div>
+
+    <div>
+        <button onclick="simulate('occupied')">simulate room occupied</button>
+        <button onclick="simulate('available')">simulate room available</button>
+        <button onclick="simulate('maybe')">simulate room booked but unoccupied</button>
+        
+    </div>
+
 </body>
 
 </html>

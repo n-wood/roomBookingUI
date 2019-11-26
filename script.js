@@ -89,7 +89,32 @@ function updateConfirmationPage()
      "</strong> at <strong>" + 
      document.getElementById("hiddenSelectedTime").value +
      "</strong</p>" ;
-     alert (detail);
-    document.getElementById('confirmationBox').innerHTML = detail;
+     document.getElementById('confirmationBox').innerHTML = detail;
+}
+
+function simulate(mode)
+{
+    if (mode == "occupied")
+    {
+        document.getElementById('roomStatus').classList.remove('green'); 
+        document.getElementById('roomStatus').classList.remove('amber');        
+        document.getElementById('roomStatus').classList.add('red'); 
+        document.getElementById('roomAvailableSatus').innerHTML = "<p id='status' class='statusBox'>This room is current occupied by:</p><p id='hostsName' class='statusBox'>Nathan Wood</p>"
+    }
+    else if (mode== "available")
+    {   
+        document.getElementById('roomStatus').classList.remove('red'); 
+        document.getElementById('roomStatus').classList.remove('amber');   
+        document.getElementById('roomStatus').classList.add('green');
+        document.getElementById('roomAvailableSatus').innerHTML = "<p id='status' class='statusBox'>This room is available for booking"
+ 
+    }
+    else {
+        document.getElementById('roomStatus').classList.remove('green'); 
+        document.getElementById('roomStatus').classList.remove('red');   
+        document.getElementById('roomStatus').classList.add('amber');
+        document.getElementById('roomAvailableSatus').innerHTML = "<p id='status' class='statusBox'>This room is booked but not yet occupied by:</p><p id='hostsName' class='statusBox'>Nathan Wood</p>"
+ 
+    }
 }
 
