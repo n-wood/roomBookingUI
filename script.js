@@ -1,10 +1,10 @@
 
 var users = [    
-     "0--Nathan Wood",
-     "1--Dan Gleeballs",
+     "0--Lettuce Wynn",
+     "1--Victor Hee",
      "2--Toby Larone",
      "3--Mike Rowave",
-     "4--James Rees",
+     "4--Chan Pions",
      "5--Penn Gwynn",
      "6--Sue Flay",
      "7--Fred O'Barr"
